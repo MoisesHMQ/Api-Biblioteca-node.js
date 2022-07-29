@@ -31,3 +31,18 @@ app.delete('/excluir/livros', (request,response) => {
             
     return response.send(excluirLivros)
     })
+
+const leitores = [];
+
+app.post('/leitores/cadastrar', (request, response) => {
+    const validarleitores = leitores.find((leitor) => leitor.rg == request.body.rg)
+        if (validarleitores){
+            return response.send("Erro: Rg já Cadstrado.")}
+
+        leitores.push({
+        id: uuid.v4(),
+        rg: request.body.rg,
+        senha: request.body.senha
+    })
+    return response.send("Status: Leitor cadastrado com sucesso.")
+    })
