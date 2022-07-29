@@ -62,3 +62,10 @@ app.get('/listar/leitores', (request, response) => {
     return response.json(leitores)
 })
 
+app.delete('/excluir/leitores', (request,response) => {
+    const id = leitores.indexOf('id');
+    const excluirleitores = leitores.splice(id,1)
+            
+    return response.send(excluirleitores)
+    })
+
