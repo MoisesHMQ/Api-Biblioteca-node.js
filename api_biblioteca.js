@@ -69,3 +69,7 @@ app.delete('/excluir/leitores', (request,response) => {
     return response.send(excluirleitores)
     })
 
+app.listen(6000, () => {
+    console.log('Status: Biblioteca Online...')
+    })
+
