@@ -9,7 +9,7 @@ const Livros = [];
 app.post('/livros/cadastro', (request, response) => {
     const validar = Livros.find((validacao) => validacao.numeração_do_livro == request.body.numeração_do_livro)
         if (validar){
-            return response.send("Status: Paciente já Existe.")}
+            return response.send("Status: leitura já Existe.")}
             
         Livros.push({
             id: uuid.v4(),
@@ -46,3 +46,14 @@ app.post('/leitores/cadastrar', (request, response) => {
     })
     return response.send("Status: Leitor cadastrado com sucesso.")
     })
+
+app.post('/login/leitores', (request, response) => {
+    const loginleitores = leitores.find((leitura) => leitura.rg == request.body.rg && leitura.senha == request.body.senha)
+    if(loginleitores){
+        return response.send("status: Seja bem vindo")
+    }
+    else{
+        return response.send("erro: rg ou Senha incorretos")
+    }
+})
+
