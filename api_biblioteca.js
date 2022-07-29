@@ -57,3 +57,8 @@ app.post('/login/leitores', (request, response) => {
     }
 })
 
+app.get('/listar/leitores', (request, response) => {
+    console.log(request.body);
+    return response.json(leitores)
+})
+
