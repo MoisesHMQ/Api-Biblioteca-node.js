@@ -23,3 +23,11 @@ app.get('/livros', (request, response) => {
     console.log(request.body);
     return response.json(Livros)
 })
+
+
+app.delete('/excluir/livros', (request,response) => {
+    const id = Livros.indexOf('id');
+    const excluirLivros = Livros.splice(id,1)
+            
+    return response.send(excluirLivros)
+    })
