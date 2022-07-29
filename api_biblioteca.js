@@ -14,7 +14,7 @@ app.post('/livros/cadastro', (request, response) => {
         Livros.push({
             id: uuid.v4(),
             livro: request.body.livro,
-            numeracao: request.bory.numeração
+            numeracao: request.bory.numeracao
         })
         return response.send("Status: Livro Cadastrado")
     })
