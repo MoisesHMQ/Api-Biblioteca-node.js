@@ -7,7 +7,7 @@ var uuid = require('uuid');
 const Livros = [];
 
 app.post('/livros/cadastro', (request, response) => {
-    const validar = Livros.find((validacao) => validacao.numeração_do_livro == request.body.numeração_do_livro)
+    const validar = Livros.find((validacao) => validacao.numeracao == request.body.numeracao)
         if (validar){
             return response.send("Status: leitura já Existe.")}
             
